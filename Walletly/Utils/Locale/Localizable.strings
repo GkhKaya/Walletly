@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Walletly
+
+  Created by Gokhan Kaya on 1.10.2023.
+  
+*/
+
+
+//Auth
+"welcome"="Welcome";
+"signInWithSocialMediaAccount" = "Sign in with social media account";
+"orUseYourEmailForSignIn"="Or use your email for sign in";
+"email"="Email";
+"password"="Password";
+"signIn"="Sign In";
+"forgotPassword"= "Forgot Password";
+"needAnAccount" = "Need an account?";
+"recoverPassword" = "Recover Password"
+"pleaseEnterYourEmail" = "Please enter your email acount to recover your
+lost password.";
+"submit" = "Submit";
+"joinWalletly" = "Join Walletly";
+"signUpWithSocialMediaAccount" = "Sign up with social media account";
+"yourName" = "Your Name";
+"signUn"="Sign Up";
+
+
