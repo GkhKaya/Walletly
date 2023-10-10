@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ImageItems{
+struct ProjectImages{
     enum GeneralImages : String{
         case walletlyLogo = "walletly_logo"
         case icGoogle = "ic_google"
-        case icApple = "icApple"
+        case icApple = "ic_apple"
         
     }
 }

@@ -3,6 +3,16 @@
     {
       "filename" : "image 1 (Traced).pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "ic_dark_mode_apple.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

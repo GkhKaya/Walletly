@@ -9,20 +9,21 @@
 
 //Auth
 "welcome"="Welcome";
-"signInWithSocialMediaAccount" = "Sign in with social media account";
+"signInWithSocialMediaAccount"="Sign in with social media account";
 "orUseYourEmailForSignIn"="Or use your email for sign in";
+"orUseYourEmailForSignUp"="Or use your email for sign up";
 "email"="Email";
 "password"="Password";
 "signIn"="Sign In";
-"forgotPassword"= "Forgot Password";
-"needAnAccount" = "Need an account?";
-"recoverPassword" = "Recover Password"
-"pleaseEnterYourEmail" = "Please enter your email acount to recover your
-lost password.";
-"submit" = "Submit";
-"joinWalletly" = "Join Walletly";
-"signUpWithSocialMediaAccount" = "Sign up with social media account";
-"yourName" = "Your Name";
-"signUn"="Sign Up";
+"forgotPassword"="Forgot Password";
+"needAnAccount"="Need an account?";
+"recoverPassword"="Recover Password";
+"pleaseEnterYourEmail"="Please enter your email acount to recover your lost password.";
+"submit"="Submit";
+"joinWalletly"="Join Walletly";
+"signUpWithSocialMediaAccount"="Sign up with social media account";
+"yourName"="Your Name";
+"signUp"="Sign Up";
+
 
 
