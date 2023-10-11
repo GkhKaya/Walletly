@@ -46,7 +46,7 @@ struct SignUpView: View {
                         
                         //                Text fields
                         VStack(spacing: 30){
-                            HTextField(hint: LocalKeys.Auth.yourName.rawValue.locale(), iconName: "person", text: $viewModel.name)
+                            HTextField(hint: LocalKeys.Auth.yourName.rawValue.locale(), iconName: "person", text: $viewModel.username)
                             
                             HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email)
                             
@@ -55,7 +55,13 @@ struct SignUpView: View {
                         
                         //                Button
                         NormalButton(onTap: {
-                            
+                            Task{
+                                do{
+                                    try await viewModel.signUp()
+                                }catch{
+                                    print(error)
+                                }
+                            }
                         }, title: "Sign Up").padding(.top,ProjectPaddings.Top.small.rawValue).padding(.horizontal,10)
                     }
                 }
