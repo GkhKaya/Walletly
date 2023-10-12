@@ -14,7 +14,8 @@ struct WalletlyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SignUpView()
+            SignInView()
+        
         }
     }
 }

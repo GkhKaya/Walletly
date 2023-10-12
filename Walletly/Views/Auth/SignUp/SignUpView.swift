@@ -48,7 +48,7 @@ struct SignUpView: View {
                         VStack(spacing: 30){
                             HTextField(hint: LocalKeys.Auth.yourName.rawValue.locale(), iconName: "person", text: $viewModel.username)
                             
-                            HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email)
+                            HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email).textInputAutocapitalization(.never)
                             
                             HSecureTextField(hint: LocalKeys.Auth.password.rawValue.locale(), iconName: "lock", text: $viewModel.password)
                         }.padding(.horizontal,10)

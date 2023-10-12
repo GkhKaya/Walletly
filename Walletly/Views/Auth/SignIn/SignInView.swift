@@ -12,6 +12,7 @@ struct SignInView: View {
     
     @State var email = ""
     @State var password = ""
+    @State var nav = false
     var body: some View {
         NavigationStack{
             GeometryReader{geometry in
@@ -45,18 +46,26 @@ struct SignInView: View {
                     
                     //                Text fields
                     VStack(spacing: 30){
-                        HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email)
+                        HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email).textInputAutocapitalization(.never)
                         
                         HSecureTextField(hint: LocalKeys.Auth.password.rawValue.locale(), iconName: "lock", text: $viewModel.password)
                     }
                     
                     //                Sign in button
-                    NormalButton(onTap: {}, title: LocalKeys.Auth.signIn.rawValue)
+                    NormalButton(onTap: {
+                        Task{
+                            do{
+                                try await viewModel.signIn()
+                            }catch{
+                                print(error)
+                            }
+                        }
+                    }, title: LocalKeys.Auth.signIn.rawValue)
                         .padding(.top,ProjectPaddings.Top.normal.rawValue)
                     
                     //                Forgot Password
                     Button{
-                        
+
                     }label: {
                         Text(LocalKeys.Auth.forgotPassword.rawValue.locale())
                             .modifier(BoldNormalTitle())
@@ -76,9 +85,10 @@ struct SignInView: View {
                                 .foregroundColor(.blue)
                         }
                         
-                        
                     }.padding(.top,ProjectPaddings.Top.small.rawValue)
                     
+                }.navigationDestination(isPresented: $viewModel.isExist){
+                    RecoverPasswordView()
                 }
                 
             }

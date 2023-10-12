@@ -29,12 +29,18 @@ struct RecoverPasswordView: View {
                     
                     
                     
-                    HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email).padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
+                    HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email).padding(.top,ProjectPaddings.Top.veryLarge.rawValue).textInputAutocapitalization(.never)
                         
                     
                     
                     NormalButton(onTap: {
-                        
+                        Task{
+                            do{
+                                try await viewModel.recoverPassword()
+                            }catch{
+                                print(error)
+                            }
+                        }
                     }, title:  LocalKeys.Auth.submit.rawValue).padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
                     
                     
