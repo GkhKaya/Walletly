@@ -26,6 +26,17 @@ struct LocalKeys {
         case signUp = "signUp"
         case orUseYourEmailForSignUp = "orUseYourEmailForSignUp"
     }
+    enum Settings : String{
+        case settings = "settings"
+        case darkMode = "darkMode"
+        case notifications = "notifications"
+        case textSize  = "textSize"
+        case updateEmail  = "updateEmail"
+        case updatePassword  = "updatePassword"
+        case interface = "interface"
+        case account  = "account"
+        case signOut  = "signOut"
+    }
 }
 
 extension String{

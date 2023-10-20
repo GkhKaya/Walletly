@@ -32,12 +32,29 @@ struct SignInView: View {
                         .padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
                         .foregroundColor(.gray)
                     HStack{
-                        Image(ProjectImages.GeneralImages.icGoogle.rawValue)
-                            .resizable()
-                            .frame(width: geometry.dw(width: 0.13),height: geometry.dh(height: 0.065))
-                        Image(ProjectImages.GeneralImages.icApple.rawValue)
-                            .resizable()
-                            .frame(width: geometry.dw(width: 0.13),height: geometry.dh(height: 0.065))
+                        Button{
+                            Task{
+                                do{
+                                    try await viewModel.googleSignIn()
+                                    
+                                }catch{
+                                    print(error)
+                                }
+                            }
+                        }label: {
+                            Image(ProjectImages.GeneralImages.icGoogle.rawValue)
+                                .resizable()
+                                .frame(width: geometry.dw(width: 0.13),height: geometry.dh(height: 0.065))
+                        }
+                        
+                        Button{
+                            
+                        }label: {
+                            Image(ProjectImages.GeneralImages.icApple.rawValue)
+                                .resizable()
+                                .frame(width: geometry.dw(width: 0.13),height: geometry.dh(height: 0.065))
+                        }
+                        
                     }.padding(.top,ProjectPaddings.Top.normal.rawValue)
                     Text(LocalKeys.Auth.orUseYourEmailForSignIn.rawValue.locale())
                         .modifier(BoldNormalTitle())
@@ -46,9 +63,9 @@ struct SignInView: View {
                     
                     //                Text fields
                     VStack(spacing: 30){
-                        HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email).textInputAutocapitalization(.never)
+                        HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope.fill", text: $viewModel.email).textInputAutocapitalization(.never)
                         
-                        HSecureTextField(hint: LocalKeys.Auth.password.rawValue.locale(), iconName: "lock", text: $viewModel.password)
+                        HSecureTextField(hint: LocalKeys.Auth.password.rawValue.locale(), iconName: "lock.fill", text: $viewModel.password)
                     }
                     
                     //                Sign in button
@@ -64,31 +81,33 @@ struct SignInView: View {
                         .padding(.top,ProjectPaddings.Top.normal.rawValue)
                     
                     //                Forgot Password
-                    Button{
-
-                    }label: {
+                    
+                    NavigationLink(destination: RecoverPasswordView()) {
                         Text(LocalKeys.Auth.forgotPassword.rawValue.locale())
                             .modifier(BoldNormalTitle())
                             .padding(.top,ProjectPaddings.Top.small.rawValue)
                     }
+                    
                     
                     //                Sign up button
                     HStack{
                         Text(LocalKeys.Auth.needAnAccount.rawValue.locale())
                             .modifier(MediumNormalTitle())
                         
-                        Button{
-                            
-                        }label: {
+                        
+                        NavigationLink(destination: SignUpView()) {
                             Text(LocalKeys.Auth.signUp.rawValue.locale())
                                 .modifier(ButtonTitle())
                                 .foregroundColor(.blue)
                         }
                         
+                        
+                        
+                        
                     }.padding(.top,ProjectPaddings.Top.small.rawValue)
                     
                 }.navigationDestination(isPresented: $viewModel.isExist){
-                    RecoverPasswordView()
+                    SettingsView()
                 }
                 
             }

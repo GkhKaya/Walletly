@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 
+
 final class SignUpViewViewModel : ObservableObject{
     @Published var email : String = ""
     @Published var password : String = ""
@@ -21,4 +22,6 @@ final class SignUpViewViewModel : ObservableObject{
         
         try await AuthManager.shared.createUser(email: email, password: password,username: username)
     }
+    
+    
 }

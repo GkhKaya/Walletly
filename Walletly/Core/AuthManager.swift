@@ -23,25 +23,43 @@ final class AuthManager{
         return AuthDataResultModel(user: user)
     }
     
-//    Create an user
-    @discardableResult
-    func createUser(email:String, password:String,username:String) async throws -> AuthDataResultModel{
-        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
-        return AuthDataResultModel(user: authDataResult.user)
+
+    
+}
+
+
+extension AuthManager{
+    //    Create an user
+        @discardableResult
+        func createUser(email:String, password:String,username:String) async throws -> AuthDataResultModel{
+            let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+            return AuthDataResultModel(user: authDataResult.user)
+        }
+        
+    //    Sign in user
+        @discardableResult
+        func signIn(email:String,password:String) async throws -> AuthDataResultModel{
+            let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+            return AuthDataResultModel(user: authDataResult.user)
+        }
+    //    Recover password
+        func recoverPassword(email:String) async throws{
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+        }
+}
+
+extension AuthManager{
+    
+    @discardableResult 
+    func signInWithGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResultModel{
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToen, accessToken: tokens.accessToken)
+        return try await signIn(credential: credential)
     }
     
-//    Sign in user
-    @discardableResult
-    func signIn(email:String,password:String) async throws -> AuthDataResultModel{
-        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
-        return AuthDataResultModel(user: authDataResult.user)
+    func signIn(credential: AuthCredential) async throws -> AuthDataResultModel{
+        let authDataReuslt = try await Auth.auth().signIn(with: credential)
+        return AuthDataResultModel(user: authDataReuslt.user)
     }
-    
-//    Recover password
-    func recoverPassword(email:String) async throws{
-        try await Auth.auth().sendPasswordReset(withEmail: email)
-    }
-    
 }
 
 

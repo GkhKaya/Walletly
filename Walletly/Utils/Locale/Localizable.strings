@@ -24,6 +24,15 @@
 "signUpWithSocialMediaAccount"="Sign up with social media account";
 "yourName"="Your Name";
 "signUp"="Sign Up";
+"settings" = "Settings";
+"darkMode" = "Dark Mode";
+"notifications" = "Notifications";
+"textSize" = "Text Size";
+"updateEmail" = "Update Email";
+"updatePassword" = "Update Password";
+"interface" = "Interface";
+"account"  = "Account";
+"signOut"  = "Sign Out";
 
 
 

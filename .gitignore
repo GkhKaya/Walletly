@@ -10,6 +10,15 @@
 xcuserdata/
 .DS_Store
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+*.GoogleService-Info.plist
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
@@ -104,5 +113,6 @@ xcuserdata
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swift,swiftpackagemanager

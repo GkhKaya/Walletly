@@ -19,7 +19,7 @@ struct RecoverPasswordView: View {
                             .frame(width: geometry.dw(width: 0.38),height: geometry.dh(height: 0.1))
                         Text(LocalKeys.Auth.recoverPassword.rawValue.locale())
                             .modifier(LargeTitleModifier())
-                    }.padding(.trailing,170)
+                    }.padding(.trailing,180)
                     
                     Text(LocalKeys.Auth.pleaseEnterYourEmail.rawValue.locale())
                         .modifier(BoldNormalTitle())
@@ -29,7 +29,7 @@ struct RecoverPasswordView: View {
                     
                     
                     
-                    HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope", text: $viewModel.email).padding(.top,ProjectPaddings.Top.veryLarge.rawValue).textInputAutocapitalization(.never)
+                    HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope.fill", text: $viewModel.email).padding(.top,ProjectPaddings.Top.veryLarge.rawValue).textInputAutocapitalization(.never)
                         
                     
                     
