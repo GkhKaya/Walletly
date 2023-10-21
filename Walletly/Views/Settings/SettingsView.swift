@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @ObservedObject var viewModel = SettingsViewViewModel()
     @State var ison: Bool = false
     @State var ison2: Bool = false
     @State var selectedItem :String = " "
@@ -28,7 +29,7 @@ struct SettingsView: View {
                         Section(LocalKeys.Settings.account.rawValue.locale()){
                             HStack{
                                 NavigationLink{
-                                    SignInView()
+                                    UpdateEmailView()
                                 }label: {
                                     SettingsViewItem(title: LocalKeys.Settings.updateEmail.rawValue.locale(), iconName: "envelope.fill")
                                     
@@ -37,7 +38,7 @@ struct SettingsView: View {
                             }
                             
                             NavigationLink{
-                                SignUpView()
+                                UpdateEmailView()
                             }label: {
                                
                                     SettingsViewItem(title: LocalKeys.Settings.updatePassword.rawValue.locale(), iconName: "lock.fill")
@@ -48,7 +49,15 @@ struct SettingsView: View {
                             NavigationLink{
                                 SignInView()
                             }label: {
-                                SettingsViewItem(title: LocalKeys.Settings.signOut.rawValue.locale(), iconName: "person.fill.badge.minus")
+                                SettingsViewItem(title: LocalKeys.Settings.signOut.rawValue.locale(), iconName: "person.fill.badge.minus").onTapGesture {
+                                    Task{
+                                        do{
+                                            try await viewModel.signOut()
+                                        }catch{
+                                            print(error)
+                                        }
+                                    }
+                                }
                             }
                             
 

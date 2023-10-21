@@ -120,7 +120,7 @@ struct SignInView: View {
     
     
 #Preview{
-    SignInView()
+    SignInView().ignoresSafeArea()
 }
 
 

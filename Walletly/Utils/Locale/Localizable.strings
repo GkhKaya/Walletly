@@ -24,6 +24,8 @@
 "signUpWithSocialMediaAccount"="Sign up with social media account";
 "yourName"="Your Name";
 "signUp"="Sign Up";
+
+//Settings
 "settings" = "Settings";
 "darkMode" = "Dark Mode";
 "notifications" = "Notifications";
@@ -33,6 +35,8 @@
 "interface" = "Interface";
 "account"  = "Account";
 "signOut"  = "Sign Out";
+"update"="Update";
+"pleaseEnterYourEmailAccountToUpdateYourEmail" = "Please enter your email account to update your email.";
 
 
 

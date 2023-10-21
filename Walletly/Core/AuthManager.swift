@@ -23,6 +23,10 @@ final class AuthManager{
         return AuthDataResultModel(user: user)
     }
     
+    func signOut () throws{
+        try Auth.auth().signOut()
+    }
+    
 
     
 }
@@ -46,8 +50,22 @@ extension AuthManager{
         func recoverPassword(email:String) async throws{
             try await Auth.auth().sendPasswordReset(withEmail: email)
         }
+        
+    func updateEmail(email:String) async throws{
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badServerResponse)
+        }
+        
+        try await user.updateEmail(to: email)
+    }
+        
+   
 }
 
+
+
+
+//Sso
 extension AuthManager{
     
     @discardableResult 

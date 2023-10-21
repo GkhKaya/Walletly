@@ -36,6 +36,8 @@ struct LocalKeys {
         case interface = "interface"
         case account  = "account"
         case signOut  = "signOut"
+        case pleaseEnterYourEmailAccountToUpdateYourEmail  = "pleaseEnterYourEmailAccountToUpdateYourEmail"
+        case update = "update"
     }
 }
 

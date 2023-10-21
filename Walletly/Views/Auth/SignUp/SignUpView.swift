@@ -14,6 +14,7 @@ struct SignUpView: View {
         NavigationStack{
             GeometryReader{geometry in
                 VStack{
+                    Spacer()
                     //                Welcome
                     VStack(alignment: .leading) {
                         Image(ProjectImages.GeneralImages.walletlyLogo.rawValue)
@@ -41,7 +42,7 @@ struct SignUpView: View {
                             Text(LocalKeys.Auth.orUseYourEmailForSignUp.rawValue.locale())
                                 .modifier(BoldNormalTitle())
                                 .foregroundColor(.gray)
-                        }.padding(.vertical,ProjectPaddings.Vertical.normal.rawValue)
+                    }.padding(.bottom,ProjectPaddings.Bottom.normal.rawValue)
                         
                         
                         //                Text fields
@@ -51,7 +52,7 @@ struct SignUpView: View {
                             HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope.fill", text: $viewModel.email).textInputAutocapitalization(.never)
                             
                             HSecureTextField(hint: LocalKeys.Auth.password.rawValue.locale(), iconName: "lock.fill", text: $viewModel.password)
-                        }.padding(.horizontal,10)
+                        }
                         
                         //                Button
                         NormalButton(onTap: {
@@ -62,8 +63,11 @@ struct SignUpView: View {
                                     print(error)
                                 }
                             }
-                        }, title: "Sign Up").padding(.top,ProjectPaddings.Top.small.rawValue).padding(.horizontal,10)
-                    }
+                        }, title: "Sign Up").padding(.top,ProjectPaddings.Top.normal.rawValue).padding(.horizontal,10)
+                    Spacer()
+                }.navigationBarBackButtonHidden()
+                    .ignoresSafeArea()
+                
                 }
             }
         }
@@ -71,7 +75,7 @@ struct SignUpView: View {
     
     struct SignUpView_Previews: PreviewProvider {
         static var previews: some View {
-            SignUpView()
+            SignUpView().ignoresSafeArea()
         }
     }
 
