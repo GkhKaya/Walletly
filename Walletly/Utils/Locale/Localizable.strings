@@ -37,6 +37,7 @@
 "signOut"  = "Sign Out";
 "update"="Update";
 "pleaseEnterYourEmailAccountToUpdateYourEmail" = "Please enter your email account to update your email.";
+"pleaseEnterYourEmailAccountToUpdateYourPassword" = "Please enter your email account to update your password.";
 
 
 

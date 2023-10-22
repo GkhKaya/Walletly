@@ -10,6 +10,6 @@ final class UpdateEmailViewViewModel : ObservableObject{
     @Published var email : String = ""
     
     func updateEmail() async throws{
-        try await AuthManager.shared.updateEmail(email: email)
+        try await AuthManager.shared.recoverPassword(email: email)
     }
 }

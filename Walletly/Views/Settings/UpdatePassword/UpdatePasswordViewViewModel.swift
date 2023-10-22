@@ -1,21 +1,23 @@
 //
-//  RecoverPasswordViewViewModel.swift
+//  UpdatePasswordViewViewModel.swift
 //  Walletly
 //
-//  Created by Gokhan Kaya on 10.10.2023.
+//  Created by Gokhan Kaya on 22.10.2023.
 //
 
 import Foundation
 
-final class RecoverPasswordViewViewModel : ObservableObject{
-    @Published var email = ""
+final class UpdatePasswordViewViewModel : ObservableObject{
+    @Published var email : String  = ""
     
-    func recoverPassword() async throws{
+    func updatePassword() async throws{
         let authedUser = try AuthManager.shared.getAuthenticatedUser()
         guard let email = authedUser.email else{
             throw URLError(.fileDoesNotExist)
         }
         try await AuthManager.shared.recoverPassword(email: email)
     }
+    
+    
     
 }
