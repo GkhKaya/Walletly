@@ -9,6 +9,8 @@ import Foundation
 
 @MainActor
 final class SettingsViewViewModel : ObservableObject{
+    @Published var darkModeToggle : Bool  = true
+    
     
     func signOut() async throws{
         try AuthManager.shared.signOut()

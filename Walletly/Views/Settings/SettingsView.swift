@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var viewModel = SettingsViewViewModel()
-    @State var ison: Bool = false
+    @Environment(\.colorScheme) var colorScheme
     @State var ison2: Bool = false
     @State var selectedItem :String = " "
     var body: some View {
@@ -19,9 +19,9 @@ struct SettingsView: View {
                     List{
                         Section(LocalKeys.Settings.interface.rawValue.locale()){
                           
-                            Toggle(isOn: $ison) {
+                            Toggle(isOn: $viewModel.darkModeToggle) {
                                 SettingsViewItem(title: LocalKeys.Settings.darkMode.rawValue.locale(), iconName: "moon.fill")
-                            }
+                            }.preferredColorScheme(viewModel.darkModeToggle ? .dark : .light)
                             Toggle(isOn: $ison2){
                                 SettingsViewItem(title: LocalKeys.Settings.notifications.rawValue.locale(), iconName: "bell.fill")
                             }
