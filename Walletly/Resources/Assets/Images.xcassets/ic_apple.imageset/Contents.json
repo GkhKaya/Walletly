@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "image 1 (Traced).pdf",
+      "filename" : "ic_apple_white.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "ic_dark_mode_apple.pdf",
+      "filename" : "ic_apple_black.pdf",
       "idiom" : "universal"
     }
   ],

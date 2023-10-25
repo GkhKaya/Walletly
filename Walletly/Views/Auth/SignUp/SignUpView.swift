@@ -14,45 +14,30 @@ struct SignUpView: View {
         NavigationStack{
             GeometryReader{geometry in
                 VStack{
-                    Spacer()
-                    //                Welcome
-                    VStack(alignment: .leading) {
+                    //                Walletly Logo
+                    HStack() {
+                        Spacer()
                         Image(ProjectImages.GeneralImages.walletlyLogo.rawValue)
                             .resizable()
                             .frame(width: geometry.dw(width: 0.38),height: geometry.dh(height: 0.1))
-                        Text(LocalKeys.Auth.joinWalletly.rawValue.locale())
-                            .modifier(LargeTitleModifier())
-                    }.padding(.trailing,140)
+                        Spacer()
+                    }.padding(.top,ProjectPaddings.Top.hugeLarge.rawValue)
                     
-                    //                Social Media Account
+                    //                Description Text
                     
-                    VStack(spacing: 30) {
-                        Text(LocalKeys.Auth.signUpWithSocialMediaAccount.rawValue.locale())
-                            .modifier(BoldNormalTitle())
-                            .padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
-                            .foregroundColor(.gray)
-                        HStack{
-                            Image(ProjectImages.GeneralImages.icGoogle.rawValue)
-                                .resizable()
-                                .frame(width: geometry.dw(width: 0.13),height: geometry.dh(height: 0.065))
-                            Image(ProjectImages.GeneralImages.icApple.rawValue)
-                                .resizable()
-                                .frame(width: geometry.dw(width: 0.13),height: geometry.dh(height: 0.065))
-                        }
-                            Text(LocalKeys.Auth.orUseYourEmailForSignUp.rawValue.locale())
+                    Text(LocalKeys.Auth.pleaseEnterYourEmailAndPasswordToCreateAccount.rawValue.locale())
                                 .modifier(BoldNormalTitle())
                                 .foregroundColor(.gray)
-                    }.padding(.bottom,ProjectPaddings.Bottom.normal.rawValue)
+                                .padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
+                                .multilineTextAlignment(.center)
                         
                         
                         //                Text fields
                         VStack(spacing: 30){
-                            HTextField(hint: LocalKeys.Auth.yourName.rawValue.locale(), iconName: "person.fill", text: $viewModel.username)
-                            
                             HTextField(hint: LocalKeys.Auth.email.rawValue.locale(), iconName: "envelope.fill", text: $viewModel.email).textInputAutocapitalization(.never)
                             
                             HSecureTextField(hint: LocalKeys.Auth.password.rawValue.locale(), iconName: "lock.fill", text: $viewModel.password)
-                        }
+                        }.padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
                         
                         //                Button
                         NormalButton(onTap: {
@@ -63,12 +48,13 @@ struct SignUpView: View {
                                     print(error)
                                 }
                             }
-                        }, title: "Sign Up").padding(.top,ProjectPaddings.Top.normal.rawValue).padding(.horizontal,10)
+                        }, title: "Sign Up")
+                        .padding(.top,ProjectPaddings.Top.normal.rawValue)
                     Spacer()
-                }.navigationBarBackButtonHidden()
-                    .ignoresSafeArea()
-                
                 }
+                    .padding()
+                
+            }.ignoresSafeArea()
             }
         }
     }

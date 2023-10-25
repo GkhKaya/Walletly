@@ -13,15 +13,17 @@ struct RecoverPasswordView: View {
         NavigationStack{
             GeometryReader{ geometry in
                 VStack{
-                    VStack(alignment: .leading) {
-                        Image(ProjectImages.GeneralImages.walletlyLogo.rawValue)
-                            .resizable()
+//                    Walletly logo
+                        HStack {
+                            Spacer()
+                            Image(ProjectImages.GeneralImages.walletlyLogo.rawValue)
+                                .resizable()
                             .frame(width: geometry.dw(width: 0.38),height: geometry.dh(height: 0.1))
-                        Text(LocalKeys.Auth.recoverPassword.rawValue.locale())
-                            .modifier(LargeTitleModifier())
-                    }.padding(.trailing,180)
+                            Spacer()
+                        }.padding(.top,ProjectPaddings.Top.hugeLarge.rawValue)
                     
-                    Text(LocalKeys.Auth.pleaseEnterYourEmail.rawValue.locale())
+//                    Description Text
+                    Text(LocalKeys.Auth.pleaseEnterYourEmailToRecoverYourLostPassword.rawValue.locale())
                         .modifier(BoldNormalTitle())
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.center)
@@ -43,10 +45,10 @@ struct RecoverPasswordView: View {
                         }
                     }, title:  LocalKeys.Auth.submit.rawValue).padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
                     
-                    
+                  Spacer()
                 }.padding()
             
-            }
+            }.ignoresSafeArea()
         }
     }
 }

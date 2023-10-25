@@ -20,7 +20,7 @@ final class SignUpViewViewModel : ObservableObject{
             return
         }
         
-        try await AuthManager.shared.createUser(email: email, password: password,username: username)
+        try await AuthManager.shared.createUser(email: email, password: password)
     }
     
     

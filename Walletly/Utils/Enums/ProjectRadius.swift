@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProjectRadius{
-    static let smallRadius : Double  = 20
+    static let smallRadius : Double  = 10
 
     static let normalRadius : Double  = 30
 }

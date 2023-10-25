@@ -35,7 +35,7 @@ final class AuthManager{
 extension AuthManager{
     //    Create an user
         @discardableResult
-        func createUser(email:String, password:String,username:String) async throws -> AuthDataResultModel{
+        func createUser(email:String, password:String) async throws -> AuthDataResultModel{
             let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
             return AuthDataResultModel(user: authDataResult.user)
         }

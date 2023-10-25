@@ -12,6 +12,7 @@ struct ProjectImages{
         case walletlyLogo = "walletly_logo"
         case icGoogle = "ic_google"
         case icApple = "ic_apple"
+        case icFacebook = "ic_facebook"
         
     }
 }

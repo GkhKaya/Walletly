@@ -16,7 +16,8 @@ struct ProjectPaddings{
     enum Top:Double{
         case small = 16
         case normal = 30
-        case veryLarge = 40
+        case veryLarge = 44
+        case hugeLarge = 62
     }
     
     enum Bottom:Double{

@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   Walletly
 
@@ -9,21 +9,23 @@
 
 //Auth
 "welcome"="Welcome";
-"signInWithSocialMediaAccount"="Sign in with social media account";
-"orUseYourEmailForSignIn"="Or use your email for sign in";
-"orUseYourEmailForSignUp"="Or use your email for sign up";
 "email"="Email";
 "password"="Password";
 "signIn"="Sign In";
 "forgotPassword"="Forgot Password";
 "needAnAccount"="Need an account?";
-"recoverPassword"="Recover Password";
-"pleaseEnterYourEmail"="Please enter your email acount to recover your lost password.";
+"pleaseEnterYourEmailToRecoverYourLostPassword"="Please enter your email to recover your lost password.";
 "submit"="Submit";
-"joinWalletly"="Join Walletly";
 "signUpWithSocialMediaAccount"="Sign up with social media account";
-"yourName"="Your Name";
 "signUp"="Sign Up";
+"signUpWithEmail" = "Sign Up With Email";
+"signInWithEmail" = "Sign In With Email";
+"pleaseUseYourSocialMediaAccountOrEmailForSignInToWalletly"= "Please use your social media account or email for Sign in to Walletly.";
+"pleaseEnterYourEmailAndPasswordForSignInToWalletly" = "Please enter your email and password for Sign in to Walletly.";
+"pleaseEnterYourEmailAndPasswordToCreateAccount" = "Please enter your email and password to create account.";
+"signInWithGoogle" = "Sign In With Google";
+"signInWithApple" = "Sign In With Apple";
+"signInWithFacebook" = "Sign In With Facebook";
 
 //Settings
 "settings" = "Settings";

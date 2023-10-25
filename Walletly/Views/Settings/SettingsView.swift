@@ -64,11 +64,12 @@ struct SettingsView: View {
                         }
                     }
                     Spacer()
-                }.navigationTitle(LocalKeys.Settings.settings.rawValue.locale()).navigationBarTitleDisplayMode(.inline)
+                }
+                .navigationTitle(LocalKeys.Settings.settings.rawValue.locale()).navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
-            }
         }
     }
+}
 
 
 #Preview {
