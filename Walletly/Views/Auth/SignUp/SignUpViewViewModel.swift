@@ -12,7 +12,8 @@ import FirebaseAuth
 final class SignUpViewViewModel : ObservableObject{
     @Published var email : String = ""
     @Published var password : String = ""
-    @Published var username : String = ""
+    @Published var goToSettingsView : Bool = false
+    
     
     func signUp() async throws {
         guard !email.isEmpty,!password.isEmpty else{
