@@ -43,6 +43,12 @@ struct LocalKeys {
         case pleaseEnterYourEmailAccountToUpdateYourPassword  = "pleaseEnterYourEmailAccountToUpdateYourPassword"
         case update = "update"
     }
+    
+    enum TabView : String{
+        case home = "home"
+        case statistics = "statistics"
+        case more = "more"
+    }
 }
 
 extension String{

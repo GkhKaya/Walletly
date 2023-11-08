@@ -9,12 +9,11 @@ import Foundation
 import UIKit
 
 final class Utilities{
-    static let shared = Utilities()
-    private init() {}
+    static let shered = Utilities()
+    private init(){}
     
     @MainActor
     func topViewController(controller: UIViewController? = nil) -> UIViewController? {
-        
         let controller = controller ?? UIApplication.shared.keyWindow?.rootViewController
         
         if let navigationController = controller as? UINavigationController {
@@ -29,6 +28,5 @@ final class Utilities{
             return topViewController(controller: presented)
         }
         return controller
-        
     }
 }

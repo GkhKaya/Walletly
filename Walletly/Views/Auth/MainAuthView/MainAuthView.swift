@@ -41,19 +41,26 @@ struct MainAuthView: View {
                                     print(error)
                                 }
                             }
-                        }, title: LocalKeys.Auth.signInWithGoogle.rawValue, iconName: ProjectImages.GeneralImages.icGoogle.rawValue, backgroundColor: .blue, textColor: .white,width: geometry.dw(width: 0.07),height: geometry.dh(height: 0.03))
+                        }, title: LocalKeys.Auth.signInWithGoogle.rawValue, iconName: ProjectImages.GeneralImages.icGoogle.rawValue, backgroundColor: .blue, textColor: .white,width: geometry.dw(width: 0.03),height: geometry.dh(height: 0.02),imageLeadingPadding: 10,textLeadingPadding: 0)
                         //                        Sign In Facebook Button
                         NormalButtonWithIcon(onTap: {
                             
-                        }, title: LocalKeys.Auth.signInWithFacebook.rawValue, iconName: ProjectImages.GeneralImages.icFacebook.rawValue, backgroundColor: .nude_blue, textColor: .white,width: geometry.dw(width: 0.07),height: geometry.dh(height: 0.03))
+                        }, title: LocalKeys.Auth.signInWithFacebook.rawValue, iconName: ProjectImages.GeneralImages.icFacebook.rawValue, backgroundColor: .nude_blue, textColor: .white,width: geometry.dw(width: 0.03),height: geometry.dh(height: 0.02),imageLeadingPadding: 30,textLeadingPadding: 1)
                         //                        Sign In Apple Button
+                        
                         NormalButtonWithIcon(onTap: {
-                            
-                        }, title: LocalKeys.Auth.signInWithApple.rawValue, iconName: ProjectImages.GeneralImages.icApple.rawValue, backgroundColor: .white, textColor: .black,width: geometry.dw(width: 0.07),height: geometry.dh(height: 0.03))
+                            Task{
+                                do{
+                                   try await viewModel.appleSignIn()
+                                }catch{
+                                    print(error)
+                                }
+                            }
+                        }, title: LocalKeys.Auth.signInWithApple.rawValue, iconName: ProjectImages.GeneralImages.icApple.rawValue, backgroundColor: Color.white, textColor: .black,width: geometry.dw(width: 0.03),height: geometry.dh(height: 0.02),imageLeadingPadding: 0,textLeadingPadding: 0)
                         
                     }.padding(.top,ProjectPaddings.Top.veryLarge.rawValue)
                     
-                    //                    Divider
+                    //                    Dividerv 
                     Divider()
                         .frame(width: geometry.dw(width: 0.6),height: geometry.dh(height: 0.001))
                         .overlay(Color.gray)

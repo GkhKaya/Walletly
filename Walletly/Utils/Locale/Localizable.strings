@@ -41,5 +41,7 @@
 "pleaseEnterYourEmailAccountToUpdateYourEmail" = "Please enter your email account to update your email.";
 "pleaseEnterYourEmailAccountToUpdateYourPassword" = "Please enter your email account to update your password.";
 
-
-
+//TabBar
+"home" = "Home";
+"statistics" = "Statistics";
+"more" = "More";

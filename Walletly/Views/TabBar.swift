@@ -14,17 +14,20 @@ struct TabBar: View {
                 TabView{
                     Text("Home")
                         .tabItem {
-                            Image(systemName: "house.fill")
+                                Image(systemName: "house.fill")
+                            Text(LocalKeys.TabView.home.rawValue.locale())
                         }
                         
                     Text("Chart")
                         .tabItem {
                             Image(systemName: "chart.bar.xaxis")
+                            Text(LocalKeys.TabView.statistics.rawValue.locale())
                         }
                     
                     SettingsView()
                         .tabItem {
                             Image(systemName: "ellipsis")
+                            Text(LocalKeys.TabView.more.rawValue.locale())
                         }
                 }.tint(Color.orange)
                 

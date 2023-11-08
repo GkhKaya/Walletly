@@ -8,8 +8,11 @@
 import Foundation
 import FirebaseAuth
 
-final class MainAuthViewViewModel : ObservableObject{
+
+final class MainAuthViewViewModel :ObservableObject {
+    
     @Published var goToSignInView  :Bool = false
+    let signInAppleHelper = SignInWithAppleHelper()
     
     func googleSignIn() async throws{
         let helper  = SignInGoogleHelper()
@@ -17,4 +20,13 @@ final class MainAuthViewViewModel : ObservableObject{
         try await AuthManager.shared.signInWithGoogle(tokens: tokens)
         
     }
+    
+    func appleSignIn() async throws{
+        let helper  = await SignInWithAppleHelper()
+        let tokens = try await helper.startSignInWithAppleFlow()
+        try await AuthManager.shared.signInWithApple(tokens:tokens)
+    }
 }
+
+
+ 
