@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct TabBar: View {
+    @Binding var showMainAuthView : Bool
     var body: some View {
         NavigationStack{
             GeometryReader{ geometry in
                 TabView{
-                    Text("Home")
+                    HomeView()
                         .tabItem {
                                 Image(systemName: "house.fill")
                             Text(LocalKeys.TabView.home.rawValue.locale())
@@ -24,7 +25,7 @@ struct TabBar: View {
                             Text(LocalKeys.TabView.statistics.rawValue.locale())
                         }
                     
-                    SettingsView()
+                    SettingsView(showMainAuthView: $showMainAuthView)
                         .tabItem {
                             Image(systemName: "ellipsis")
                             Text(LocalKeys.TabView.more.rawValue.locale())
@@ -37,5 +38,5 @@ struct TabBar: View {
 }
 
 #Preview {
-    TabBar()
+    TabBar(showMainAuthView: .constant(false))
 }

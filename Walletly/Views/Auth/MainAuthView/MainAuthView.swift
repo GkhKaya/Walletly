@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainAuthView: View {
     @ObservedObject private var viewModel = MainAuthViewViewModel()
+    @Binding var showMainAuthView: Bool
+
     var body: some View {
         NavigationStack{
             GeometryReader{geometry in
@@ -37,6 +39,7 @@ struct MainAuthView: View {
                             Task{
                                 do{
                                     try await viewModel.googleSignIn()
+                                    showMainAuthView  = false
                                 }catch{
                                     print(error)
                                 }
@@ -44,7 +47,6 @@ struct MainAuthView: View {
                         }, title: LocalKeys.Auth.signInWithGoogle.rawValue, iconName: ProjectImages.GeneralImages.icGoogle.rawValue, backgroundColor: .blue, textColor: .white,width: geometry.dw(width: 0.03),height: geometry.dh(height: 0.02),imageLeadingPadding: 10,textLeadingPadding: 0)
                         //                        Sign In Facebook Button
                         NormalButtonWithIcon(onTap: {
-                            
                         }, title: LocalKeys.Auth.signInWithFacebook.rawValue, iconName: ProjectImages.GeneralImages.icFacebook.rawValue, backgroundColor: .nude_blue, textColor: .white,width: geometry.dw(width: 0.03),height: geometry.dh(height: 0.02),imageLeadingPadding: 30,textLeadingPadding: 1)
                         //                        Sign In Apple Button
                         
@@ -52,6 +54,7 @@ struct MainAuthView: View {
                             Task{
                                 do{
                                    try await viewModel.appleSignIn()
+                                    showMainAuthView = false
                                 }catch{
                                     print(error)
                                 }
@@ -72,7 +75,7 @@ struct MainAuthView: View {
                     }, title: LocalKeys.Auth.signInWithEmail.rawValue)
                     .padding(.top,ProjectPaddings.Top.normal.rawValue)
                     .navigationDestination(isPresented: $viewModel.goToSignInView){
-                        SignInView()
+                        SignInView(showMainAuthView: $showMainAuthView)
                     }
                     
                     //                    Forgot Password Button
@@ -90,7 +93,7 @@ struct MainAuthView: View {
                             .modifier(MediumNormalTitle())
                         
                         
-                        NavigationLink(destination: SignUpView()) {
+                        NavigationLink(destination: SignUpView(showMainAuthView: $showMainAuthView)) {
                             Text(LocalKeys.Auth.signUpWithEmail.rawValue.locale())
                                 .modifier(ButtonTitle())
                                 .foregroundColor(.blue)
@@ -106,5 +109,5 @@ struct MainAuthView: View {
 }
 
 #Preview {
-    MainAuthView().ignoresSafeArea()
+    MainAuthView(showMainAuthView: .constant(false)).ignoresSafeArea()
 }

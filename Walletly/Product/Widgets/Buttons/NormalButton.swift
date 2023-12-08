@@ -26,7 +26,7 @@ struct NormalButton: View {
             
                 .buttonBorderShape(.roundedRectangle)
                 .controlSize(.large)
-                .background(Color.orange)
+                .background(Color.iceland_poppy)
                 .cornerRadius(ProjectRadius.smallRadius)
             
             

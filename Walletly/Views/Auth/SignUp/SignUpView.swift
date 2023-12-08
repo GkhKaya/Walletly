@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpView: View {
     @ObservedObject private var viewModel = SignUpViewViewModel()
     @Environment(\.colorScheme) var colorScheme
+    @Binding var  showMainAuthView : Bool
     var body: some View {
         NavigationStack{
             GeometryReader{geometry in
@@ -44,6 +45,7 @@ struct SignUpView: View {
                             Task{
                                 do{
                                     try await viewModel.signUp()
+                                    showMainAuthView = false
                                 }catch{
                                     print(error)
                                 }
@@ -61,7 +63,7 @@ struct SignUpView: View {
     
     struct SignUpView_Previews: PreviewProvider {
         static var previews: some View {
-            SignUpView().ignoresSafeArea()
+            SignUpView(showMainAuthView: .constant(false)).ignoresSafeArea()
         }
     }
 

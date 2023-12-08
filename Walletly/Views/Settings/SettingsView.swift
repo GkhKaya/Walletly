@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @ObservedObject var viewModel = SettingsViewViewModel()
+    @Binding var showMainAuthView: Bool
+
     @Environment(\.colorScheme) var colorScheme
     @State var ison2: Bool = false
     @State var selectedItem :String = " "
@@ -46,13 +48,12 @@ struct SettingsView: View {
                                 
                             }
                             
-                            NavigationLink{
-                                SignInView()
-                            }label: {
+                            
                                 SettingsViewItem(title: LocalKeys.Settings.signOut.rawValue.locale(), iconName: "person.fill.badge.minus").onTapGesture {
                                     Task{
                                         do{
                                             try await viewModel.signOut()
+                                            showMainAuthView  = true
                                         }catch{
                                             print(error)
                                         }
@@ -66,12 +67,13 @@ struct SettingsView: View {
                     Spacer()
                 }
                 .navigationTitle(LocalKeys.Settings.settings.rawValue.locale()).navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden()
+                
+                
         }
     }
-}
+
 
 
 #Preview {
-    SettingsView().ignoresSafeArea()
+    SettingsView(showMainAuthView: .constant(false)).ignoresSafeArea()
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct ProjectPaddings{
     enum All:Double{
-        case small = 10
+        case extraSmall = 10
         case normal = 20
         case large = 30
     }
@@ -21,16 +21,26 @@ struct ProjectPaddings{
     }
     
     enum Bottom:Double{
+        case extraSmall = 10
         case small = 16
         case normal = 30
         case veryLarge = 40
     }
     
     enum Horizontal: Double{
-        case small = 11
+        case small = 10
     }
     
     enum Vertical: Double{
+        case extraSmall = 16;
         case normal = 30
+    }
+    enum Leading : Double{
+        case normal = 20
+    }
+    
+    enum Trailing : Double{
+        case normal = 20
+        case hugeLarge  = 90
     }
 }

@@ -16,7 +16,7 @@ struct HTextField: View {
     var body: some View {
         HStack {
             Image(systemName: iconName)
-                .foregroundColor(.yellow)
+                .foregroundColor(Color.nude_blue)
             TextField(hint,text: text)
             
         }

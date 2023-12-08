@@ -1,0 +1,47 @@
+/*
+  Localizable.strings
+  Walletly
+
+  Created by Gokhan Kaya on 1.10.2023.
+  
+*/
+
+
+//Auth
+"welcome"="Hosgeldin";
+"email"="Email";
+"password"="Şifre";
+"signIn"="Giriş yap";
+"forgotPassword"="Şifremi Unuttum";
+"needAnAccount"="Hesabın yok mu?";
+"pleaseEnterYourEmailToRecoverYourLostPassword"="Lütfen şifreni yenilemek için mail adresini gir.";
+"submit"="Gönder";
+"signUpWithSocialMediaAccount"="Sosyal medya ile kayıt ol.";
+"signUp"="Kayıt ol";
+"signUpWithEmail" = "Mail ile kayıt ol.";
+"signInWithEmail" = "Mail ile giriş yap.";
+"pleaseUseYourSocialMediaAccountOrEmailForSignInToWalletly"= "Walletly'e giriş yapmak için sosyal medya hesabını veya mail adresini kullan.";
+"pleaseEnterYourEmailAndPasswordForSignInToWalletly" = "Giriş yapmak için lütfen mail adresini ve şfireni gir.";
+"pleaseEnterYourEmailAndPasswordToCreateAccount" = "Kayıt olmak için mail ve şifreni gir..";
+"signInWithGoogle" = "Google ile giriş yap.";
+"signInWithApple" = "Apple ile giriş yap.";
+"signInWithFacebook" = "Facebook ile giriş yap.";
+
+//Settings
+"settings" = "Ayarlar";
+"darkMode" = "Karanlık mod";
+"notifications" = "Bildirimler";
+"textSize" = "Yazı boyutu";
+"updateEmail" = "Mail güncelle";
+"updatePassword" = "Şifre güncelle";
+"interface" = "Interface";
+"account"  = "Account";
+"signOut"  = "Sign Out";
+"update"="Update";
+"pleaseEnterYourEmailAccountToUpdateYourEmail" = "Please enter your email account to update your email.";
+"pleaseEnterYourEmailAccountToUpdateYourPassword" = "Please enter your email account to update your password.";
+
+//TabBar
+"home" = "Home";
+"statistics" = "Statistics";
+"more" = "More";

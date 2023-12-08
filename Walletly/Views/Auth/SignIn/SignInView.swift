@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     @ObservedObject private var viewModel = SignInViewViewModel()
+    @Binding var showMainAuthView  : Bool
     
     @State var email = ""
     @State var password = ""
@@ -44,6 +45,7 @@ struct SignInView: View {
                         Task{
                             do{
                                 try await viewModel.signIn()
+                                showMainAuthView = false
                             }catch{
                                 print(error)
                             }
@@ -63,7 +65,7 @@ struct SignInView: View {
                
             }.ignoresSafeArea()
                 .navigationDestination(isPresented: $viewModel.isExist){
-                    SettingsView()
+                    TabBar(showMainAuthView: $showMainAuthView)
                 }
             
         }
@@ -75,7 +77,7 @@ struct SignInView: View {
     
     
 #Preview{
-    SignInView().ignoresSafeArea()
+    SignInView(showMainAuthView: .constant(false)).ignoresSafeArea()
 }
 
 
