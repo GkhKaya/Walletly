@@ -44,4 +44,7 @@
 //TabBar
 "home" = "Home";
 "statistics" = "Statistics";
-"more" = "More";
+"settings" = "Ayarlar";
+
+//Profile
+"profile" = "Profil";

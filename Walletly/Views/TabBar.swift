@@ -10,7 +10,6 @@ import SwiftUI
 struct TabBar: View {
     @Binding var showMainAuthView : Bool
     var body: some View {
-        NavigationStack{
             GeometryReader{ geometry in
                 TabView{
                     HomeView()
@@ -27,16 +26,16 @@ struct TabBar: View {
                     
                     SettingsView(showMainAuthView: $showMainAuthView)
                         .tabItem {
-                            Image(systemName: "ellipsis")
-                            Text(LocalKeys.TabView.more.rawValue.locale())
+                            Image(systemName: "gear")
+                            Text(LocalKeys.TabView.settings.rawValue.locale())
                         }
                 }.tint(Color.orange)
-                
+              
             }
-        }
+        
     }
 }
 
 #Preview {
-    TabBar(showMainAuthView: .constant(false))
+        TabBar(showMainAuthView: .constant(false)).ignoresSafeArea()
 }

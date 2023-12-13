@@ -24,6 +24,7 @@ struct SettingsView: View {
                             Toggle(isOn: $viewModel.darkModeToggle) {
                                 SettingsViewItem(title: LocalKeys.Settings.darkMode.rawValue.locale(), iconName: "moon.fill")
                             }.preferredColorScheme(viewModel.darkModeToggle ? .dark : .light)
+                            
                             Toggle(isOn: $ison2){
                                 SettingsViewItem(title: LocalKeys.Settings.notifications.rawValue.locale(), iconName: "bell.fill")
                             }

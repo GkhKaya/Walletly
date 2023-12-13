@@ -11,7 +11,6 @@ import Firebase
 @main
 struct WalletlyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
     var body: some Scene {
         WindowGroup {
             MainAppRoot()

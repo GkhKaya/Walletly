@@ -21,7 +21,9 @@ final class SignUpViewViewModel : ObservableObject{
             return
         }
         
-        try await AuthManager.shared.createUser(email: email, password: password)
+        let authDataResultModel = try await AuthManager.shared.createUser(email: email, password: password)
+        let user = DBUserModel(auth: authDataResultModel)
+        try await UserManager.shered.crateNewUser(user: user)
     }
     
     

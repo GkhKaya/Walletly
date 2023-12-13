@@ -47,7 +47,11 @@ struct LocalKeys {
     enum TabView : String{
         case home = "home"
         case statistics = "statistics"
-        case more = "more"
+        case settings = "settings"
+    }
+    
+    enum ProfileView : String{
+        case profile = "profile"
     }
 }
 

@@ -47,9 +47,7 @@ struct HomeView: View {
                     
                     
                     Spacer()
-                }.padding()
-                .navigationTitle("Home").navigationBarTitleDisplayMode(.inline)
-            }
+                }.padding()            }
         }
     }
 }
@@ -64,9 +62,10 @@ struct TotalBalanceView: View {
         VStack{
             //                        Total balance text and Eye icon
             HStack{
-                Text("Total Balance")
-                    .modifier(MediumMediumTitle())
-                    .foregroundStyle(.gray)
+                VStack(alignment: .leading){
+                    Text("Gökhan Kaya")
+                        .modifier(BoldLargeTitle())
+                }
                 Spacer()
                 Button{
                     

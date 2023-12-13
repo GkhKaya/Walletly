@@ -13,7 +13,7 @@ struct SettingsViewItem: View {
     
     var body: some View {
         HStack{
-            Image(systemName: iconName).foregroundStyle(Color.nude_blue)
+            Image(systemName: iconName).foregroundStyle(Color.iceland_poppy)
             Text(title)
         }
     }

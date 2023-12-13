@@ -20,7 +20,9 @@ final class SignInViewViewModel : ObservableObject{
             print("No email and password")
             return
         }
-        try await AuthManager.shared.signIn(email: email, password: password)
+        let authDataResultModel = try await AuthManager.shared.signIn(email: email, password: password)
+        let user = DBUserModel(auth: authDataResultModel)
+        try await UserManager.shered.crateNewUser(user: user)
         isExist = true
     }
     

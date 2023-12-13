@@ -10,7 +10,6 @@ import SwiftUI
 struct SignInView: View {
     @ObservedObject private var viewModel = SignInViewViewModel()
     @Binding var showMainAuthView  : Bool
-    
     @State var email = ""
     @State var password = ""
     @State var nav = false
@@ -18,7 +17,6 @@ struct SignInView: View {
         NavigationStack{
             GeometryReader{geometry in
                 VStack{
-                    
                     HStack() {
                         Spacer()
                         Image(ProjectImages.GeneralImages.walletlyLogo.rawValue)

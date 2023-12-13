@@ -16,7 +16,7 @@ struct HTextField: View {
     var body: some View {
         HStack {
             Image(systemName: iconName)
-                .foregroundColor(Color.nude_blue)
+                .foregroundColor(Color.iceland_poppy)
             TextField(hint,text: text)
             
         }
@@ -33,7 +33,7 @@ struct HSecureTextField: View {
     var body: some View {
         HStack {
             Image(systemName: iconName)
-                .foregroundColor(.yellow)
+                .foregroundColor(Color.iceland_poppy)
             SecureField(hint,text: text)
             
             

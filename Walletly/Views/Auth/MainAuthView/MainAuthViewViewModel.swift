@@ -17,14 +17,19 @@ final class MainAuthViewViewModel :ObservableObject {
     func googleSignIn() async throws{
         let helper  = SignInGoogleHelper()
         let tokens = try await helper.signIn()
-        try await AuthManager.shared.signInWithGoogle(tokens: tokens)
+        let authDataResultModel = try await AuthManager.shared.signInWithGoogle(tokens: tokens)
+        let user = DBUserModel(auth: authDataResultModel)
+        try await UserManager.shered.crateNewUser(user: user)
         
     }
     
     func appleSignIn() async throws{
-        let helper  = await SignInWithAppleHelper()
+        let helper  =  SignInWithAppleHelper()
         let tokens = try await helper.startSignInWithAppleFlow()
-        try await AuthManager.shared.signInWithApple(tokens:tokens)
+        let authDataResultModel = try await AuthManager.shared.signInWithApple(tokens:tokens)
+        let user = DBUserModel(auth: authDataResultModel)
+        try await UserManager.shered.crateNewUser(user: user)
+
     }
 }
 
